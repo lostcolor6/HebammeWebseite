@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hebammenpraxis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Willkommen bei der Hebammenpraxis</h1>
+        <nav>
+            <ul>
+                <li><a href="#leistungen">Leistungen</a></li>
+                <li><a href="#ueber-mich">Über mich</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+                <li><a href="#impressum">Impressum</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="leistungen">
+        <h2>Unsere Leistungen</h2>
+        <p>Hier können Sie sich über unsere Leistungen rund um Schwangerschaft, Geburt und Wochenbett informieren.</p>
+    </section>
+
+    <section id="ueber-mich">
+        <h2>Über mich</h2>
+        <p>Ich bin Hebamme mit jahrelanger Erfahrung und stehe Ihnen während Ihrer Schwangerschaft zur Seite.</p>
+    </section>
+
+    <section id="galerie">
+        <h2>Galerie</h2>
+        <div class="gallery">
+            <img src="bilder/bild1.jpg" alt="Bild 1">
+            <!-- hier beliebig viele Bilder -->
+        </div>
+    </section>
+
+    <section id="kontakt">
+        <h2>Kontakt</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">E-Mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Nachricht:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Senden</button>
+        </form>
+        <p id="response-message"></p>
+    </section>
+
+    <footer id="impressum">
+        <h2>Impressum</h2>
+        <p>Hebammenpraxis Annemarie Maier<br>
+        Thomas-Mann-Weg 6, 78549 Spaichingen<br>
+        Telefon: 01625454500<br>
+        E-Mail: neue Email</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
