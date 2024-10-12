@@ -1,19 +1,22 @@
 document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); //verhindert neuladen von Seite
+    event.preventDefault();
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+    const form = event.target;
+    const formData = new FormData(form);
 
-    if (name && email && message) {
-        document.getElementById('response-message').innerText = "Vielen Dank für Ihre Nachricht!";
-		
-		//print in konsole
-		console.log("Name: " + name);
-		console.log("E-Mail: " + email);
-		console.log("Nachricht: " + message);
-		
-    } else {
-        document.getElementById('response-message').innerText = "Bitte füllen Sie alle Felder aus.";
-    }
+    fetch(form.action, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('response-message').innerText = data.message;
+        if (data.status === 'success') {
+            form.reset();
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('response-message').innerText = 'Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.';
+    });
 });
